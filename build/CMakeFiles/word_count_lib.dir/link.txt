@@ -1,0 +1,2 @@
+/usr/bin/ar qc libword_count_lib.a CMakeFiles/word_count_lib.dir/FileReader.cpp.o CMakeFiles/word_count_lib.dir/LineParser.cpp.o CMakeFiles/word_count_lib.dir/WordStatistics.cpp.o CMakeFiles/word_count_lib.dir/CsvWriter.cpp.o CMakeFiles/word_count_lib.dir/WordCountController.cpp.o
+/usr/bin/ranlib libword_count_lib.a
