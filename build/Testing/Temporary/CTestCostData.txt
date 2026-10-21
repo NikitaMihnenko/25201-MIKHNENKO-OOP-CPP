@@ -1,6 +1,0 @@
-ConvertToCSVTest.CountsWords 2 0.0183409
-ConvertToCSVTest.HandlesPunctuation 2 0.0148321
-ConvertToCSVTest.CreatesCSVHeader 2 0.015855
-ConvertToCSVTest.HandlesEmptyFile 2 0.0148199
-ConvertToCSVTest.HandlesMissingInputFile 2 0.00657524
----

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/run_tests.dir/tests/tests.cpp.o -o run_tests  libword_count_lib.a lib/libgtest_main.a lib/libgtest.a 
