@@ -1,32 +1,32 @@
 #include "FileReader.h"
 
-FileReader::FileReader(const std::string& filePath) : filename(filePath), loaded(false) {
+FileReader::FileReader(const std::string& filePath) : filename(filePath) {
 }
 
+bool FileReader::open() {
+    file.open(filename);
+    return file.is_open();
+}
 
-bool FileReader::load() {
-    std::ifstream file(filename);
+bool FileReader::hasNext() {
+    return file.is_open() && file.peek() != std::ifstream::traits_type::eof();
+}
 
-    if (!file.is_open()) {
-        return false;
-    }
-
-    lines.clear();
-
+std::string FileReader::next() {
     std::string line;
-    while (std::getline(file, line)) {
-        lines.push_back(line);
+    if (hasNext()) {
+        std::getline(file, line);
     }
-
-    file.close();
-    loaded = true;
-    return true;
+    return line;
 }
 
-const std::list<std::string>& FileReader::getLines() const {
-    return lines;
+void FileReader::close() {
+    if (file.is_open()) {
+        file.close();
+    }
 }
 
-bool FileReader::isLoaded() const {
-    return loaded;
+void FileReader::reset() {
+    file.clear();
+    file.seekg(0, std::ios::beg);
 }

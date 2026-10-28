@@ -1,24 +1,19 @@
-#ifndef FILEREADER_H
-#define FILEREADER_H
+#pragma once
 
-#include <string>
 #include <fstream>
-#include <list>
+#include <string>
 
 class FileReader {
-private:
-    std::string filename;
-    std::list<std::string> lines;
-    bool loaded;
-
 public:
     explicit FileReader(const std::string& filePath);
 
-    bool load();
+    bool open();
+    bool hasNext();
+    std::string next();
+    void close();
+    void reset();
 
-    const std::list<std::string>& getLines() const;
-
-    bool isLoaded() const;
+private:
+    std::string filename;
+    std::ifstream file;
 };
-
-#endif
