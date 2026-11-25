@@ -1,6 +1,25 @@
-   # Idea
-   .idea/
-   # CMake
-   cmake-build-*/
+# Папки сборки CMake
+build/
+cmake-build-*/
+
+# Настройки IDE
 .idea/
-.idea/
+.vscode/
+
+# Скомпилированные файлы
+*.o
+*.obj
+*.exe
+*.out
+*.a
+
+# Файлы покрытия кода (gcov / lcov)
+*.gcno
+*.gcda
+*.gcov
+*.info
+coverage/
+
+# Мусор ОС
+.DS_Store
+Thumbs.db
